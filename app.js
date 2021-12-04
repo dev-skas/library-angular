@@ -134,7 +134,7 @@ app.post('/api/updatebook',(req,res)=>{
 
 app.get('/api/authors', (req, res) => {
     authordata.find().then((authors) => {
-        res.send(authors)
+        res.send({authors})
     })
 })
 
