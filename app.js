@@ -14,10 +14,7 @@ const jwt = require('jsonwebtoken')
 
 const port = process.env.PORT || 1000;
 
-app.get('/*', function(req, res) {
-    res.sendFile(path.join(__dirname + '/dist/frontend/index.html'));
-   });
-   
+
 
 
 
@@ -137,6 +134,8 @@ app.get('/api/authors', (req, res) => {
         res.send(authors)
     })
 })
+
+
 
 
 app.get('/api/authors/:id', (req, res) => {
@@ -318,5 +317,9 @@ app.get('/api/user/delete/:id', (req, res) => {
 
    
 })
+
+app.get("/*", function (req, res) {
+    res.sendFile(path.join(__dirname + "/dist/frontend/index.html"));
+  });
    
 app.listen(port,()=>{console.log(`Server Ready at ${port}`)});
