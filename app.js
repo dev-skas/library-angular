@@ -1,13 +1,14 @@
 const express = require('express');
 const app = new express();
-app.use(express.json())
-const bookdata = require('../backend/model/bookdata');
-const authordata = require('../backend/model/authordata');
-const userdata = require('../backend/model/userdata');
+const path = require('path');
+
+const bookdata = require('./model/bookdata');
+const authordata = require('./model/authordata');
+const userdata = require('./model/userdata');
 const cors = require('cors');
 app.use(cors());
+app.use(express.json())
 
-const path = require('path');
 app.use(express.static('./dist/frontend'));
 const jwt = require('jsonwebtoken')
 
