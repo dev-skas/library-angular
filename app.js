@@ -8,7 +8,7 @@ const cors = require('cors');
 app.use(cors());
 
 const path = require('path');
-app.use(express.static('./dist/forntend'));
+app.use(express.static('./dist/frontend'));
 const jwt = require('jsonwebtoken')
 
 const port = process.env.PORT || 1000;
