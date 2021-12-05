@@ -31,8 +31,7 @@ function verify(req, res, nxt) {
 
     let payload = jwt.verify(token, 'secretkey')
     
-    console.log(payload)
-    console.log(token)
+  
 
     if (!payload) {
         return res.send(401).send('Invalid Request')
@@ -317,6 +316,7 @@ app.get('/api/user/delete/:id', (req, res) => {
 
    
 })
+
 
 app.get("/*", function (req, res) {
     res.sendFile(path.join(__dirname + "/dist/frontend/index.html"));
